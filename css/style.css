@@ -6,7 +6,30 @@
     position: relative;
     color:rgb(25, 53, 44);
     font-weight: bold;
+    width: 100%;
+    max-width: 800px;
+    
 }
+.daily-affirmation-title {
+    font-size: 3rem;
+    margin-bottom:  2rem;
+    text-align: center;
+    color: #ffffff;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.7);
+}
+.affirmation-carousel {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    transition: background 0.5s ease-in-out;
+    background-size: cover;
+    background-position: center;
+}
+
 .carousel input[type="radio"]{
     position: absolute;
     opacity: 0;
@@ -25,12 +48,18 @@
 }
 .slide {
     width: calc(100%/ 9);
+    height: 100%;
     flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
     text-align: center;
     padding: 2rem;
     box-sizing: border-box;
+    font-size: 3rem;
+    color: #ffffff;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.7);
 }
-#af-1:checked ~ .slides-window .slides-track {transform: translateX(0%);}
+/* #af-1:checked ~ .slides-window .slides-track {transform: translateX(0%);}
 #af-2:checked ~ .slides-window .slides-track {transform: translateX(calc(-100%/9));}
 #af-3:checked ~ .slides-window .slides-track {transform: translateX(calc(-200%/9));}
 #af-4:checked ~ .slides-window .slides-track {transform: translateX(calc(-300%/9));}
@@ -38,21 +67,53 @@
 #af-6:checked ~ .slides-window .slides-track {transform: translateX(calc(-500%/9));}
 #af-7:checked ~ .slides-window .slides-track {transform: translateX(calc(-600%/9));}
 #af-8:checked ~ .slides-window .slides-track {transform: translateX(calc(-700%/9));}
-#af-9:checked ~ .slides-window .slides-track {transform: translateX(calc(-800%/9));}
+#af-9:checked ~ .slides-window .slides-track {transform: translateX(calc(-800%/9));} */
+
+.affirmation-carousel:has(#af-1:checked) .slides-track { transform: translateX(0%);}
+.affirmation-carousel:has(#af-1:checked) {background-image: url('../assets/beach.jpg');}
+.affirmation-carousel:has(#af-2:checked) .slides-track { transform: translateX(calc(-100% / 9)); }
+.affirmation-carousel:has(#af-2:checked) { background-image: url('../assets/mountain.jpg') }
+
+.affirmation-carousel:has(#af-3:checked) .slides-track { transform: translateX(calc(-200% / 9)); }
+.affirmation-carousel:has(#af-3:checked) { background-image: url('../assets/crop.jpg') }
+
+.affirmation-carousel:has(#af-4:checked) .slides-track { transform: translateX(calc(-300% / 9)); }
+.affirmation-carousel:has(#af-4:checked) { background-image: url('../assets/sunbeam.jpg') }
+
+.affirmation-carousel:has(#af-5:checked) .slides-track { transform: translateX(calc(-400% / 9)); }
+.affirmation-carousel:has(#af-5:checked) { background-image: url('../assets/sunset.jpg') }
+
+.affirmation-carousel:has(#af-6:checked) .slides-track { transform: translateX(calc(-500% / 9)); }
+.affirmation-carousel:has(#af-6:checked) { background-image: url('../assets/savanah.jpg') }
+
+
+.affirmation-carousel:has(#af-7:checked) .slides-track { transform: translateX(calc(-600% / 9)); }
+.affirmation-carousel:has(#af-7:checked) { background-image: url('../assets/lake.jpg') }
+
+
+.affirmation-carousel:has(#af-8:checked) .slides-track { transform: translateX(calc(-700% / 9)); }
+.affirmation-carousel:has(#af-8:checked) { background-image: url('../assets/leaves.jpg') }
+
+
+.affirmation-carousel:has(#af-9:checked) .slides-track { transform: translateX(calc(-800% / 9)); }
+.affirmation-carousel:has(#af-9:checked) { background-image: url('../assets/sky.jpg') }
+
 
 .carousel-nav {
     display: flex;
-    gap: 8px;
+    gap: 20px;
     justify-content: center;
-    margin-top: 15px;
+    align-items: center;
+    margin-top: 50px;
 }
 .carousel-nav label {
-    width: 10px;
-    height: 10px;
+    width: 20px;
+    height: 20px;
     border-radius: 50%;
     background: #ccc;
     cursor: pointer;
     display: inline-block;
+    transition: background 0.3s;
     
 }
 #af-1:checked ~ .carousel-nav label[for="af-1"],
@@ -65,4 +126,30 @@
 #af-8:checked ~ .carousel-nav label[for="af-8"],
 #af-9:checked ~ .carousel-nav label[for="af-9"] {
     background: #2c7a68;
+    transform: scale(1.2)
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    text-align: center;
+    z-index: 1000;
+    top: 0;
+    position: sticky;
+    padding: 15px 30px;
+}
+nav {
+    text-align: center;
+    margin-top: 10px;
+}
+.main-nav {
+    padding: 10px 10px;
+    color:#2c7a68;
+    margin: 0 5px;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+.site-header {
+    color: bisque;
 }

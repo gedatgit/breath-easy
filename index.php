@@ -24,7 +24,7 @@ $tip = $tips[date('N') -1]
     <main>
         <h1>This is Breath Easy</h1>
         <section class="affirmation-carousel">
-            <h2>Daily Affirmation</h2>
+            <h2 class="daily-affirmation-title">Daily Affirmation</h2>
             <div class="carousel">
                 <input type="radio" name="affirmation" id="af-1">
                 <input type="radio" name="affirmation" id="af-2">
@@ -36,6 +36,7 @@ $tip = $tips[date('N') -1]
                 <input type="radio" name="affirmation" id="af-8">
                 <input type="radio" name="affirmation" id="af-9">
 
+                
                 <div class="slides-window">
                     <div class="slides-track">
                         <p class="slide">I am capable of handling any challenges that come my way.</p>
