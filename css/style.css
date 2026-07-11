@@ -133,6 +133,7 @@
 header {
     width: 100vw;
     text-align: center;
+    justify-content: center;
     z-index: 1000;
     top: 0;
     position: sticky;
@@ -208,15 +209,232 @@ header {
     animation: breathe 8s ease-in-out infinite;
 }
 
-@keyframes breathe {
-    0% { transform: scale(1); background-color: #2c7a68;}
-    50% {transform: scale(1.6); background-color: #79b8a6;}
-    100% {transform: scale(1); background-color: #2c7a68;}
-
+.breathing-selector {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
-@media (prefers-reduced-motion: reduce){
-    .breathing-circle {
-        animation: none;
-        transform: scale(1.3);
+
+.breathing-selector input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.technique-tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 1.5rem;
+}
+
+.technique-tabs label {
+    padding: 8px 18px;
+    border-radius: 20px;
+    background: #e6f0ed;
+    color: #2c7a68;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+#tech-box:checked ~ .technique-tabs label[for="tech-box"],
+#tech-pursed:checked ~ .technique-tabs label[for="tech-pursed"] {
+    background: #2c7a68;
+    color: #ffffff;
+}
+
+.breathing-circle-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    margin-bottom: 1.5rem;
+}
+
+
+
+.breathing-circle {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: #2c7a68;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+.breathing-backdrop {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width:250px;
+    height: auto;
+    z-index: -1000;
+    pointer-events: none;
+}
+
+/* Default technique: box breathing, 16s = 4s per phase */
+.breathing-circle {
+    animation: box-breathe 16s ease-in-out infinite;
+}
+
+@keyframes box-breathe {
+    0%   { transform: scale(1); }    /* start inhale */
+    25%  { transform: scale(1.5); }  /* end inhale / start hold */
+    50%  { transform: scale(1.5); }  /* end hold / start exhale */
+    75%  { transform: scale(1); }    /* end exhale / start hold */
+    100% { transform: scale(1); }    /* end hold, loop */
+}
+
+/* Pursed lip: 6s total, 2s inhale + 4s exhale, no holds */
+#tech-pursed:checked ~ .breathing-circle-wrap .breathing-circle {
+    animation: pursed-breathe 6s ease-in-out infinite;
+}
+
+@keyframes pursed-breathe {
+    0%      { transform: scale(1); }
+    33.33%  { transform: scale(1.4); }  /* 2s of 6s = end of inhale */
+    100%    { transform: scale(1); }    /* remaining 4s = exhale */
+}
+
+/* Phase label positioning: stack all labels in the same spot */
+.phase-labels {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.phase-text {
+    position: absolute;
+    opacity: 0;
+    z-index: 1000;
+    color: rgb(0, 187, 220);
+}
+
+/* Show/hide whole label sets depending on selected technique */
+.pursed-labels { display: none; }
+#tech-pursed:checked ~ .breathing-circle-wrap .box-labels { display: none; }
+#tech-pursed:checked ~ .breathing-circle-wrap .pursed-labels { display: flex; }
+
+
+
+
+@keyframes lbl-box-inhale-anim {
+    0%, 25%    { opacity: 1; }
+    25.01%, 100% { opacity: 0; }
+}
+@keyframes lbl-box-hold1-anim {
+    0%, 25%      { opacity: 0; }
+    25.01%, 50%  { opacity: 1; }
+    50.01%, 100% { opacity: 0; }
+}
+@keyframes lbl-box-exhale-anim {
+    0%, 50%      { opacity: 0; }
+    50.01%, 75%  { opacity: 1; }
+    75.01%, 100% { opacity: 0; }
+}
+@keyframes lbl-box-hold2-anim {
+    0%, 75%      { opacity: 0; }
+    75.01%, 100% { opacity: 1; }
+}
+
+#lbl-box-inhale { animation: lbl-box-inhale-anim 16s infinite; }
+#lbl-box-hold1  { animation: lbl-box-hold1-anim 16s infinite; }
+#lbl-box-exhale { animation: lbl-box-exhale-anim 16s infinite; }
+#lbl-box-hold2  { animation: lbl-box-hold2-anim 16s infinite; }
+
+/* Pursed lip labels: inhale visible first 2s (33.33%), exhale the rest */
+@keyframes lbl-p-inhale-anim {
+    0%, 33.33%    { opacity: 1; }
+    33.34%, 100%  { opacity: 0; }
+}
+@keyframes lbl-p-exhale-anim {
+    0%, 33.33%    { opacity: 0; }
+    33.34%, 100%  { opacity: 1; }
+}
+
+#lbl-p-inhale { animation: lbl-p-inhale-anim 6s infinite; }
+#lbl-p-exhale { animation: lbl-p-exhale-anim 6s infinite; }
+
+.technique-descriptions {
+    max-width: 500px;
+}
+
+.technique-desc {
+    display: none;
+    text-align: left;
+}
+
+#tech-box:checked ~ .technique-descriptions #desc-box,
+#tech-pursed:checked ~ .technique-descriptions #desc-pursed {
+    display: block;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .breathing-circle,
+    .phase-text {
+        animation: none !important;
+        transform: scale(1.2);
+        opacity: 1;
     }
+}
+/* Circle animation for this technique */
+#tech-478:checked ~ .breathing-circle-wrap .breathing-circle {
+    animation: breathe-478 19s ease-in-out infinite;
+}
+
+@keyframes breathe-478 {
+    0%      { transform: scale(1); }     /* start inhale */
+    21.05%  { transform: scale(1.5); }   /* end inhale / start hold */
+    57.89%  { transform: scale(1.5); }   /* end hold / start exhale */
+    100%    { transform: scale(1); }     /* end exhale, loop */
+}
+
+/* Show/hide this label set based on selection */
+.labels-478 { display: none; }
+#tech-478:checked ~ .breathing-circle-wrap .box-labels { display: none; }
+#tech-478:checked ~ .breathing-circle-wrap .pursed-labels { display: none; }
+#tech-478:checked ~ .breathing-circle-wrap .labels-478 { display: flex; }
+
+/* Also make sure the other two techniques hide this new label set */
+#tech-box:checked ~ .breathing-circle-wrap .labels-478,
+#tech-pursed:checked ~ .breathing-circle-wrap .labels-478 {
+    display: none;
+}
+
+/* Phase label timing, same 19s cycle */
+@keyframes lbl-478-inhale-anim {
+    0%, 21.05%     { opacity: 1; }
+    21.06%, 100%   { opacity: 0; }
+}
+@keyframes lbl-478-hold-anim {
+    0%, 21.05%      { opacity: 0; }
+    21.06%, 57.89%  { opacity: 1; }
+    57.90%, 100%    { opacity: 0; }
+}
+@keyframes lbl-478-exhale-anim {
+    0%, 57.89%     { opacity: 0; }
+    57.90%, 100%   { opacity: 1; }
+}
+
+#lbl-478-inhale { animation: lbl-478-inhale-anim 19s infinite; }
+#lbl-478-hold   { animation: lbl-478-hold-anim 19s infinite; }
+#lbl-478-exhale { animation: lbl-478-exhale-anim 19s infinite; }
+
+/* Tab active state */
+#tech-478:checked ~ .technique-tabs label[for="tech-478"] {
+    background: #2c7a68;
+    color: #ffffff;
+}
+
+/* Description visibility */
+#tech-478:checked ~ .technique-descriptions #desc-478 {
+    display: block;
 }
