@@ -1,0 +1,68 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+.carousel {
+    position: relative;
+    color:rgb(25, 53, 44);
+    font-weight: bold;
+}
+.carousel input[type="radio"]{
+    position: absolute;
+    opacity: 0;
+    pointer-events:none;
+}
+
+.slides-window {
+    overflow: hidden;
+    width: 100%;
+
+}
+.slides-track {
+    display: flex;
+    width: 900%;
+    transition: transform 0.5s ease-in-out;
+}
+.slide {
+    width: calc(100%/ 9);
+    flex-shrink: 0;
+    text-align: center;
+    padding: 2rem;
+    box-sizing: border-box;
+}
+#af-1:checked ~ .slides-window .slides-track {transform: translateX(0%);}
+#af-2:checked ~ .slides-window .slides-track {transform: translateX(calc(-100%/9));}
+#af-3:checked ~ .slides-window .slides-track {transform: translateX(calc(-200%/9));}
+#af-4:checked ~ .slides-window .slides-track {transform: translateX(calc(-300%/9));}
+#af-5:checked ~ .slides-window .slides-track {transform: translateX(calc(-400%/9));}
+#af-6:checked ~ .slides-window .slides-track {transform: translateX(calc(-500%/9));}
+#af-7:checked ~ .slides-window .slides-track {transform: translateX(calc(-600%/9));}
+#af-8:checked ~ .slides-window .slides-track {transform: translateX(calc(-700%/9));}
+#af-9:checked ~ .slides-window .slides-track {transform: translateX(calc(-800%/9));}
+
+.carousel-nav {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    margin-top: 15px;
+}
+.carousel-nav label {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #ccc;
+    cursor: pointer;
+    display: inline-block;
+    
+}
+#af-1:checked ~ .carousel-nav label[for="af-1"],
+#af-2:checked ~ .carousel-nav label[for="af-2"],
+#af-3:checked ~ .carousel-nav label[for="af-3"],
+#af-4:checked ~ .carousel-nav label[for="af-4"],
+#af-5:checked ~ .carousel-nav label[for="af-5"],
+#af-6:checked ~ .carousel-nav label[for="af-6"],
+#af-7:checked ~ .carousel-nav label[for="af-7"],
+#af-8:checked ~ .carousel-nav label[for="af-8"],
+#af-9:checked ~ .carousel-nav label[for="af-9"] {
+    background: #2c7a68;
+}
