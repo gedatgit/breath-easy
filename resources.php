@@ -56,7 +56,7 @@ $resources = [
                     <span class="rsource-type"><?php echo htmlspecialchars($resource["type"]); ?></span>
                     <h2><?php echo htmlspecialchars($resource["title"]); ?></h2>
                     <p><?php echo htmlspecialchars($resource["description"]); ?></p>
-                    <a href="<?php htmlspecialchars($resource["url"]); ?>" target="_blank" rel="noopener noreferrer">Visit Website</a>
+                    <a href="<?php echo htmlspecialchars($resource["url"]); ?>" target="_blank" rel="noopener noreferrer">Visit Website</a>
                 </article>
             <?php endforeach; ?>
 

@@ -14,6 +14,7 @@ if (empty($_SESSION["moods"]) || empty($_SESSION["journal"])){
     <title>Confirm</title>
     <link rel="stylesheet" href="/css/style.css">
 </head>
+
 <body>
     <!-- include header  -->
      <?php include "html/header.html" ; ?>
@@ -38,6 +39,6 @@ if (empty($_SESSION["moods"]) || empty($_SESSION["journal"])){
             </p>
         </section>
      </main>
-    
+     <?php include "html/footer.html"; ?>
 </body>
 </html>
