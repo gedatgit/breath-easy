@@ -22,7 +22,7 @@ $tip = $tips[date('N') -1]
 <body>
     <?php   include 'html/header.html'?>
     <main>
-        <h1>This is Breath Easy</h1>
+        <!-- <h1>This is Breath Easy</h1> -->
         <section class="affirmation-carousel">
             <h2 class="daily-affirmation-title">Daily Affirmation</h2>
             <div class="carousel">
