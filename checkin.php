@@ -44,25 +44,39 @@ if ($_SERVER['REQUEST_METHOD']=== "POST"){
         <?php endif; ?>
         <!-- this is the form where the user inputs their daily feeling  -->
         <form action="checkin.php" method="POST">
-            <fieldset>
-                <legend>Which mood describes you best</legend>
+            
+            <legend>Which mood describes you best</legend>
+                
+            <div class="mood-circle-wrap">    
                 <!-- go in a loop through each mood and provide a chekin html structure -->
-                <?php foreach ($moods as $mood):    ?>
-                    <label class="mood-option">
+                <?php
+                $total = count($moods);
+                foreach ($moods as $i => $mood):    
+                    $angle = ($i/ $total) *360;
+                ?>
+                    <label class="mood-option" style="--angle: <?php echo $angle;?>deg;">
                         <!-- multiple checkboxes share this name so use [] to collect all checked boxes into an array -->
                         <input type="checkbox" name="moods[]" 
                         value="<?php echo htmlspecialchars($mood); ?>">
                         <?php   echo htmlspecialchars($mood); ?>
                     </label>
-                    <?php endforeach ?>
-            </fieldset>
+                <?php endforeach; ?>
+
+                <div class="journal-center">
+                    <label for="journal"></label>
+                    <textarea name="journal" id="journal" rows="10" placeholder="Describe how you are feeling"></textarea>  
+                      
+                </div>
+                
+                
+
+            </div>
+            <button class="checkin-submit" type="submit">Check In</button>
                     <!-- create a text area to write in a journal  -->
-            <label for="journal">Describe how you are feeling</label>
-            <textarea name="journal" id="journal" rows="10" ></textarea>
-            <button type="submit">Check In</button>
+            
         </form>
     </main>
-    <?php   include 'html/footer.html'?>
+    <?php   include 'html/footer.html';?>
 </body>
 
 </html>

@@ -21,8 +21,6 @@ $tip = $tips[date('N') -1]
 </head>
 <body>
     <?php   include 'html/header.html'?>
-    <main>
-        <!-- <h1>This is Breath Easy</h1> -->
         <section class="affirmation-carousel">
             <h2 class="daily-affirmation-title">Daily Affirmation</h2>
             <div class="carousel">
@@ -66,6 +64,9 @@ $tip = $tips[date('N') -1]
             </div>
 
         </section>
+    <main>
+        <!-- <h1>This is Breath Easy</h1> -->
+ 
         <p>Take a moment and check in with how you are at the moment</p>
         <section class="daily-tip">
             <h2>Tip of the day</h2>
