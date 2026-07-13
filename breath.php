@@ -25,7 +25,7 @@ $techniques = [
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guided Breathing | Breath Easy</title>
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <?php include "html/header.html"; ?>
@@ -62,7 +62,7 @@ $techniques = [
                         <span class="phase-text" id="lbl-478-hold">Hold</span>
                         <span class="phase-text" id="lbl-478-exhale">Exhale</span>
                     </div>
-                    <img src="/assets/panda.png" class="breathing-backdrop" alt="">
+                    <img src="assets/panda.png" class="breathing-backdrop" alt="">
                     
                 </div>
                 

@@ -17,7 +17,7 @@ $tip = $tips[date('N') -1]
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Breath Easy</title>
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <?php   include 'html/header.html'?>
@@ -74,15 +74,15 @@ $tip = $tips[date('N') -1]
             <p>Mental health is very important and one of the ways to improve our mental health is to be more connected with yourself. Breath Easy gives you a few simple ways to check in with yourself each day. A daily check-in helps you notice patterns in how you're feeling. Journaling gives those feelings somewhere to go. Guided breathing gives your body a moment to settle.</p>
 
             <div class="guide-links">
-                <a href="/checkin.php" class="guide-link">
+                <a href="checkin.php" class="guide-link">
                     <h3>Check In</h3>
                     <p>Log your mood and write a quick journal entry.</p>
                 </a>
-                <a href="/breath.php" class="guide-link">
+                <a href="breath.php" class="guide-link">
                     <h3>Breathe</h3>
                     <p>Follow a guided breathing exercise to help you relax.</p>
                 </a>
-                <a href="/resources.php" class="guide-link">
+                <a href="resources.php" class="guide-link">
                     <h3>Resources</h3>
                     <p>Explore tools, guides, and support if you need more.</p>
                 </a>
