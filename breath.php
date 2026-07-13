@@ -4,19 +4,19 @@ $techniques = [
         "id" => "box",
         "title" => "Box Breathing (Square Breathing)",
         "best_for" => "Focus, stress relief, and centering the mind.",
-        "how" => "Inhale through your nose for a count of four. Hold for four seconds. Exhale slowly for four seconds. Hold empty for four seconds. Repeat."
+        "how" => "Inhale through your nose for a count of four. Hold for four seconds. Exhale slowly for four seconds. Hold empty for four seconds."
     ],
     [
         "id" => "pursed",
         "title" => "Pursed Lip Breathing",
-        "best_for" => "Relieving shortness of breath or activity-related breathlessness.",
-        "how" => "Relax your neck and shoulders. Inhale slowly through your nose for two seconds. Purse your lips and exhale slowly through your mouth for four seconds or more."                    
+        "best_for" => "Relieving shortness of breath.",
+        "how" => "Inhale slowly through your nose for two seconds. Purse your lips and exhale slowly through your mouth for four seconds or more."                    
     ],
     [
         "id" => "478",
         "title" => "4-7-8 Breathing",
         "best_for" => "Reducing anxiety and falling asleep.",
-        "how" => "Inhale slowly through your nose for four seconds. Hold your breath for seven seconds. Exhale completely through your mouth for eight seconds. Repeat the cycle four times."
+        "how" => "Inhale slowly through your nose for four seconds. Hold your breath for seven seconds. Exhale completely through your mouth for eight seconds."
     ],
 ]; ?>
 <!DOCTYPE html>
@@ -31,7 +31,7 @@ $techniques = [
     <?php include "html/header.html"; ?>
     <main class="breath-page">
         <h1>Guided Breathing</h1>
-        <p>pick one and Follow the circle.</p>
+        <p><strong>Pick one method and follow the panda.</strong></p>
         <div class="breathing-selector">
             <input type="radio" name="technique" id="tech-box" checked>
             <input type="radio" name="technique" id="tech-pursed">
@@ -41,6 +41,14 @@ $techniques = [
                 <label for="tech-box">Box Breathing</label>
                 <label for="tech-pursed">Pursed Lip Breathing</label>
                 <label for="tech-478">4-7-8 Breathing</label>
+            </div>
+            <div class="technique-descriptions">
+                <?php   foreach($techniques as $tech): ?>
+                    <div class="technique-desc" id="desc-<?php echo htmlspecialchars($tech['id']); ?>">
+                        <p><strong>Best for: </strong><?php echo htmlspecialchars($tech['best_for']);?> </p>
+                        <p><?php echo htmlspecialchars($tech['how']); ?></p>
+                    </div>
+                <?php endforeach; ?>
             </div>
 
             <div class="breathing-circle-wrap">
@@ -71,14 +79,7 @@ $techniques = [
 
 
 
-            <div class="technique-descriptions">
-                <?php   foreach($techniques as $tech): ?>
-                    <div class="technique-desc" id="desc-<?php echo htmlspecialchars($tech['id']); ?>">
-                        <p><strong>Best for:</strong><?php echo htmlspecialchars($tech['best_for']);?></p>
-                        <p><?php echo htmlspecialchars($tech['how']); ?></p>
-                    </div>
-                <?php endforeach; ?>
-            </div>
+            
         </div>
 
     </main>

@@ -2,8 +2,10 @@
 session_start();
 // a statements that guards against someone trying to reach this pae without checking in 
 if (empty($_SESSION["moods"]) || empty($_SESSION["journal"])){
-    header("Location: checkin.php");
-    exit;
+    $_SESSION["checkin_time"] = "No entry yet";
+    $_SESSION["moods"] = [];
+    $_SESSION["journal"] = "No entry yet";
+
 }
 ?>
 <!DOCTYPE html>

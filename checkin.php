@@ -1,10 +1,10 @@
 <?php
 session_start();
-$moods = ['Ecstatic', 'Excited', 'Happy', 'Cheerful','Serene','Relaxed', 'Content','Peaceful' ,'Fearful', 'Angry','Anxious','Frustrated', 'Bored', 'Melancholy', 'Apathetic', 'Discouraged'];
+$moods = ['Ecstatic', 'Excited', 'Happy', 'Cheerful','Serene','Relaxed', 'Content','Peaceful' ,'Fearful', 'Angry','Anxious','Frustrated', 'Bored', 'Apathetic', 'Melancholy', 'Discouraged'];
 $errors = [];
 if ($_SERVER['REQUEST_METHOD']=== "POST"){
     if (empty($_POST['moods'])){
-        $errors[] = "please identify at least one mood";
+        $errors[] = "Please identify at least one mood";
     }
     if (empty(trim($_POST['journal'] ?? ''))){
         $errors[] = "Writting a little about how you are feeling is actually very helpfull";
@@ -32,6 +32,7 @@ if ($_SERVER['REQUEST_METHOD']=== "POST"){
     <?php   include 'html/header.html'?>
     <main>
         <h1>Your Daily Check-in</h1>
+        <p>Select how you are feeling and write a journal</p>
         <?php if (!empty($errors)): ?>
             <div class="form-errors">
                 <ul>
@@ -63,14 +64,14 @@ if ($_SERVER['REQUEST_METHOD']=== "POST"){
 
                 <div class="journal-center">
                     <label for="journal"></label>
-                    <textarea name="journal" id="journal" rows="10" placeholder="Write a little about how you are feeling              🖊                           ⌨"></textarea>  
+                    <textarea name="journal" id="journal" rows="10" placeholder="JOURNAL                       📝                      Write a little about how you are feeling              🖊                           ⌨" required ></textarea>  
                       
                 </div>
                 
                 
 
             </div>
-            <button class="checkin-submit" type="submit">Check In</button>
+            <button class="checkin-submit" type="submit">Submit</button>
                     <!-- create a text area to write in a journal  -->
             
         </form>

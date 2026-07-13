@@ -6,7 +6,7 @@
 
 body {
     font-family: 'Poppins', 'Helvetica Neue', Arial, sans-serif;
-    background-color: #f7faf9;
+    background: linear-gradient( to bottom, #f9fffd, #eefff9 ,#d2fff2); /*#f7faf9*/
     color: rgb(25, 53, 44);
     line-height: 1.6;
     margin: 0;
@@ -33,6 +33,7 @@ h2 {
 
 p {
     margin-bottom: 1rem;
+    text-align: center;
 }
 
 a {
@@ -147,7 +148,7 @@ a {
     gap: 20px;
     justify-content: center;
     align-items: center;
-    margin-top: 50px;
+    margin-top: 20px;
 }
 .carousel-nav label {
     width: 20px;
@@ -175,7 +176,7 @@ a {
 .daily-tip {
     background: #2c7a68;
     color: #ffffff;
-    border-radius: 20px;
+    border-radius: 10px;
     padding: 1.75rem;
     margin: 2rem 0;
     text-align: center;
@@ -194,25 +195,32 @@ a {
     font-size: 1.15rem;
     font-weight: bold;
     margin-bottom: 0;
+    
 }
 
 /* --- site guide --- */
 .site-guide {
     margin: 3rem 0;
+    
+}
+.site-guide p {
+    margin: 1.5rem auto 1.5rem auto;
+    text-align: left;
 }
 
 .guide-links {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 1.25rem;
-    margin-top: 1.5rem;
+    
 }
 
 .guide-link {
-    background: #ffffff;
+    background: #f5fffb;
     border-radius: 16px;
     padding: 1.5rem;
     text-decoration: none;
+    
     color: rgb(25, 53, 44);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -232,6 +240,8 @@ a {
 .guide-link p {
     font-size: 0.9rem;
     margin-bottom: 0;
+    margin: 1.5rem auto 0 auto;
+    text-align: left;
 }
 /* global header  */
 header {
@@ -245,7 +255,9 @@ header {
     background: linear-gradient(
         to bottom,
         #ffffff,
-        #ffffffc0
+        #ffffff,
+        #ffffffcd,
+        #ffffff70
     );
     /* background-color: #ffffff; */
 
@@ -287,7 +299,7 @@ header {
     background-color: #a4ecd6;
     text-decoration: none;
     font-weight: bold;
-    transition: box-shadow 0.25s ease, border-radius 0.25s ease, background-color 0.2s ease, transform 0.15s ease;
+    transition: box-shadow 0.25s ease, border-radius 0.25s ease, background-color 0.s ease, transform 0.15s ease;
     box-shadow: 0 2px 4px rgba(0,0,0,0.7);
 }
 
@@ -466,6 +478,7 @@ header {
 .resource-card p {
     flex-grow: 1;
     font-size: 0.95rem;
+    text-align: left;
     color: rgb(25, 53, 44);
 }
 
@@ -556,6 +569,7 @@ header {
     align-items: center;
     height: 300px;
     margin-bottom: 1.5rem;
+    
 }
 
 
@@ -572,6 +586,7 @@ header {
     color: #ffffff;
     font-weight: bold;
     font-size: 1.1rem;
+    
 }
 .breathing-backdrop {
     position: absolute;
@@ -582,6 +597,7 @@ header {
     height: auto;
     z-index: -1000;
     pointer-events: none;
+    
 }
 
 /* Default technique: box breathing, 16s = 4s per phase */
@@ -671,11 +687,17 @@ header {
 
 .technique-descriptions {
     max-width: 500px;
+
 }
 
 .technique-desc {
     display: none;
-    text-align: left;
+    text-align: center;
+    font-weight: bold;
+    background: #a4ecd6ce;
+    padding: 5px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px #2c7a68;
 }
 
 #tech-box:checked ~ .technique-descriptions #desc-box,
@@ -750,7 +772,7 @@ header {
     position: relative;
     width: 500px;
     height: 500px;
-    margin: 3rem auto;
+    margin: 1rem auto;
 }
 .journal-center {
     position: absolute;
@@ -761,17 +783,7 @@ header {
     text-align: center;
 }
 
-/* .journal-center textarea {
-    width: 360px;
-    height: 36px;
-    border-radius: 50%;
-    background: #a4ecd6;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    box-sizing: border-box;
-} */
+
 .journal-center textarea {
     width: 220px;
     height: 220px;
@@ -820,13 +832,13 @@ header {
 .checkin-submit {
     display: block;
     position: relative;
-    margin-top: 1.5rem;
-    margin: 1.5rem auto 0 auto;
+    margin-top: 0.5rem;
+    margin: 0.5rem auto 0 auto;
     padding: 12px 36px;
     border: none;
     border-radius: 50px;
     background-color: #a4ecd6;
-    color: #ffffff;
+    color: black;
     font-weight: bold;
     font-size: 1rem;
     cursor: pointer;
@@ -841,6 +853,7 @@ header {
 
 .checkin-submit:active {
     background-color: #163e35;
+    color: #ffffff;
     transform: translateY(0);
 }
 /* for phones and smaller devices  */

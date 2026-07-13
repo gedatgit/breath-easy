@@ -22,13 +22,13 @@ $tip = $tips[date('N') -1]
 <body>
     <?php   include 'html/header.html'?>
         <section class="affirmation-carousel">
-            <h2 class="daily-affirmation-title">Affirmations to say Every day</h2>
+            <h2 class="daily-affirmation-title">Affirmations for every day</h2>
             <div class="carousel">
                 <input type="radio" name="affirmation" id="af-1">
                 <input type="radio" name="affirmation" id="af-2">
                 <input type="radio" name="affirmation" id="af-3">
-                <input type="radio" name="affirmation" id="af-4">
-                <input type="radio" name="affirmation" id="af-5" checked>
+                <input type="radio" name="affirmation" id="af-4" checked>
+                <input type="radio" name="affirmation" id="af-5">
                 <input type="radio" name="affirmation" id="af-6">
                 <input type="radio" name="affirmation" id="af-7">
                 <input type="radio" name="affirmation" id="af-8">
@@ -37,15 +37,15 @@ $tip = $tips[date('N') -1]
                 
                 <div class="slides-window">
                     <div class="slides-track">
-                        <p class="slide">I am capable of handling any challenges that come my way.</p>
-                        <p class="slide">I love and accept myself exactly as I am.</p>
+                        <p class="slide">You are capable of handling any challenges that comes your way.</p>
+                        <p class="slide">You love and accept yourself exactly as you are.</p>
                         <p class="slide">Today is filled with endless possibilities and opportunities.</p>
-                        <p class="slide">I am in control of my own thoughts, feelings, and actions.</p>
-                        <p class="slide">I choose to let go of fear and embrace confidence.</p>
-                        <p class="slide">My potential is limitless, and I am growing every day.</p>
-                        <p class="slide">I am deserving of love, joy, and success.</p>
-                        <p class="slide">I am grateful for all the good things in my life.</p>
-                        <p class="slide">I trust myself to make the best decisions for my future.</p>
+                        <p class="slide">You are in control of your own thoughts, feelings, and actions.</p>
+                        <p class="slide">You choose to let go of fear and embrace confidence.</p>
+                        <p class="slide">Your potential is limitless, and you are growing every day.</p>
+                        <p class="slide">You are deserving of love, joy, and success.</p>
+                        <p class="slide">You are grateful for all the good things in your life.</p>
+                        <p class="slide">You trust myself to make the best decisions for your future.</p>
 
                     </div>
 
@@ -71,20 +71,24 @@ $tip = $tips[date('N') -1]
         </section>
         <section class="site-guide">
             <h2>Getting Started</h2>
-            <p>Mental health is very important and one of the ways to improve our mental health is to be more connected with yourself. Breath Easy gives you a few simple ways to check in with yourself each day. A daily check-in helps you notice patterns in how you're feeling. Journaling gives those feelings somewhere to go. Guided breathing gives your body a moment to settle.</p>
+            <p>Mental health is very important and one of the ways to improve your mental health is to be more connected with yourself. Breath Easy gives you a few simple ways to check in with yourself each day. A daily check-in helps you notice patterns in how you're feeling. Journaling gives those feelings somewhere to go. Guided breathing gives your body a moment to settle.</p>
 
             <div class="guide-links">
                 <a href="checkin.php" class="guide-link">
-                    <h3>Check In</h3>
+                    <h3>Daily Journal and Mood Check In</h3>
                     <p>Log your mood and write a quick journal entry.</p>
                 </a>
                 <a href="breath.php" class="guide-link">
-                    <h3>Breathe</h3>
+                    <h3>Breathing Exercises</h3>
                     <p>Follow a guided breathing exercise to help you relax.</p>
                 </a>
                 <a href="resources.php" class="guide-link">
                     <h3>Resources</h3>
                     <p>Explore tools, guides, and support if you need more.</p>
+                </a>
+                <a href="confirm.php" class="guide-link">
+                    <h3>Journal and mood Entry</h3>
+                    <p>If you have already submitted a journal or mood checkin, see what it is</p>
                 </a>
             </div>
         </section>        
