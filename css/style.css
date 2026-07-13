@@ -21,7 +21,8 @@ main {
 h1 {
     font-size: 2.2rem;
     color: rgb(25, 53, 44);
-    margin-bottom: 1rem;
+    margin: 1.5rem auto 0 auto;
+    text-align: center;
 }
 
 h2 {
@@ -169,6 +170,68 @@ a {
 #af-9:checked ~ .carousel-nav label[for="af-9"] {
     background: #2c7a68;
     transform: scale(1.2)
+}
+
+.daily-tip {
+    background: #2c7a68;
+    color: #ffffff;
+    border-radius: 20px;
+    padding: 1.75rem;
+    margin: 2rem 0;
+    text-align: center;
+    box-shadow: 0 4px 14px rgba(44, 122, 104, 0.3);
+}
+
+.daily-tip h2 {
+    color: #ffffff;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.5rem;
+}
+
+.daily-tip p {
+    font-size: 1.15rem;
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+/* --- site guide --- */
+.site-guide {
+    margin: 3rem 0;
+}
+
+.guide-links {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.25rem;
+    margin-top: 1.5rem;
+}
+
+.guide-link {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 1.5rem;
+    text-decoration: none;
+    color: rgb(25, 53, 44);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.guide-link:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.guide-link h3 {
+    color: #2c7a68;
+    font-size: 1.1rem;
+    margin-bottom: 0.4rem;
+}
+
+.guide-link p {
+    font-size: 0.9rem;
+    margin-bottom: 0;
 }
 /* global header  */
 header {
@@ -779,4 +842,79 @@ header {
 .checkin-submit:active {
     background-color: #163e35;
     transform: translateY(0);
+}
+/* for phones and smaller devices  */
+
+@media (max-width: 600px) {
+
+    .header-inner {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .main-nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .main-nav li:nth-child(1) a {
+        padding: 12px 18px;
+    }
+
+    .main-nav li:nth-child(4) a {
+        width: 50px;
+        height: 50px;
+    }
+
+    .daily-affirmation-title {
+        font-size: 2rem;
+    }
+
+    .slide {
+        font-size: 1.6rem;
+        padding: 1.5rem;
+    }
+
+    /* Collapse the mood circle into a simple stacked list on small screens */
+    .mood-circle-wrap {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .mood-option {
+        position: static;         /* undo the absolute circular positioning */
+        transform: none;          /* cancel the rotate/translate math entirely */
+    }
+
+    .mood-option:hover,
+    .mood-option:active {
+        transform: scale(0.97);   /* simple, non-radial feedback instead */
+    }
+
+    .journal-center {
+        position: static;         /* undo absolute centering */
+        transform: none;
+        width: 100%;
+        max-width: 320px;
+        margin: 1rem 0;
+    }
+
+    .breathing-circle,
+    .breathing-backdrop {
+        width: 120px;
+        height: 120px;
+    }
+
+    .resource-list {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-inner {
+        flex-direction: column;
+        text-align: center;
+    }
 }

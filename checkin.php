@@ -1,6 +1,6 @@
 <?php
 session_start();
-$moods = ['Ecstatic', 'Excited', 'Happy', 'Cheerful','Serene','Relaxed', 'Content','Peaceful' ,'Fearful', 'Angry','Anxious','Frustrated', 'Discouraged', 'Melancholy', 'Bored', 'Apathetic'];
+$moods = ['Ecstatic', 'Excited', 'Happy', 'Cheerful','Serene','Relaxed', 'Content','Peaceful' ,'Fearful', 'Angry','Anxious','Frustrated', 'Bored', 'Melancholy', 'Apathetic', 'Discouraged'];
 $errors = [];
 if ($_SERVER['REQUEST_METHOD']=== "POST"){
     if (empty($_POST['moods'])){
@@ -45,7 +45,6 @@ if ($_SERVER['REQUEST_METHOD']=== "POST"){
         <!-- this is the form where the user inputs their daily feeling  -->
         <form action="checkin.php" method="POST">
             
-            <legend>Which mood describes you best</legend>
                 
             <div class="mood-circle-wrap">    
                 <!-- go in a loop through each mood and provide a chekin html structure -->
@@ -64,7 +63,7 @@ if ($_SERVER['REQUEST_METHOD']=== "POST"){
 
                 <div class="journal-center">
                     <label for="journal"></label>
-                    <textarea name="journal" id="journal" rows="10" placeholder="Describe how you are feeling"></textarea>  
+                    <textarea name="journal" id="journal" rows="10" placeholder="Write a little about how you are feeling              🖊                           ⌨"></textarea>  
                       
                 </div>
                 

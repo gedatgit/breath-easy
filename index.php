@@ -22,7 +22,7 @@ $tip = $tips[date('N') -1]
 <body>
     <?php   include 'html/header.html'?>
         <section class="affirmation-carousel">
-            <h2 class="daily-affirmation-title">Daily Affirmation</h2>
+            <h2 class="daily-affirmation-title">Affirmations to say Every day</h2>
             <div class="carousel">
                 <input type="radio" name="affirmation" id="af-1">
                 <input type="radio" name="affirmation" id="af-2">
@@ -65,13 +65,29 @@ $tip = $tips[date('N') -1]
 
         </section>
     <main>
-        <!-- <h1>This is Breath Easy</h1> -->
- 
-        <p>Take a moment and check in with how you are at the moment</p>
         <section class="daily-tip">
             <h2>Tip of the day</h2>
             <p><?php echo htmlspecialchars($tip); ?></p>
         </section>
+        <section class="site-guide">
+            <h2>Getting Started</h2>
+            <p>Mental health is very important and one of the ways to improve our mental health is to be more connected with yourself. Breath Easy gives you a few simple ways to check in with yourself each day. A daily check-in helps you notice patterns in how you're feeling. Journaling gives those feelings somewhere to go. Guided breathing gives your body a moment to settle.</p>
+
+            <div class="guide-links">
+                <a href="/checkin.php" class="guide-link">
+                    <h3>Check In</h3>
+                    <p>Log your mood and write a quick journal entry.</p>
+                </a>
+                <a href="/breath.php" class="guide-link">
+                    <h3>Breathe</h3>
+                    <p>Follow a guided breathing exercise to help you relax.</p>
+                </a>
+                <a href="/resources.php" class="guide-link">
+                    <h3>Resources</h3>
+                    <p>Explore tools, guides, and support if you need more.</p>
+                </a>
+            </div>
+        </section>        
 
     </main>
     <?php   include 'html/footer.html'?>

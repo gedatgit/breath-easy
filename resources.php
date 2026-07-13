@@ -25,16 +25,16 @@ $resources = [
         "url" => "https://www.insighttimer.com/"
     ],
     [
-        "type" => "Podcast",
-        "title" => "The Positive Psychology Podcast",
-        "description" => "for nuggets of positivity and happiness psychology",
-        "url" => "https://www.podcasts.apple.com/us/podcast/the-positive-psychology-podcast-bringing-the/id912190084"
+        "type" => "Guide",
+        "title" => "Psych Central",
+        "description" => "Psych Central has blogs with practice mental health applications that are searchable by disorder. These blogs provide education for living with the disorder, helpful stories, and resources to find support. ",
+        "url" => "https://www.psychcentral.com/"
     ],
     [
-        "type" => "Podcast",
-        "title" => "This Podcast is Self Care",
-        "description" => "Learn About Self Care",
-        "url" => "https://www.thispodcastisselfcare.libsyn.com/"
+        "type" => "Guide",
+        "title" => "HelpGuide",
+        "description" => "HelpGuide is a nonprofit organization dedicated to helping the public find information regarding mental health and resources.",
+        "url" => "https://www.helpguide.org/"
     ]
 ];
 ?>
