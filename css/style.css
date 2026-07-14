@@ -271,6 +271,14 @@ header {
     margin: 0 auto;
 
 }
+.menu-checkbox {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+.nav-toggle {
+    display: none;
+}
 .logo {
     font-size: 1.4rem;
     font-weight: bold;
@@ -864,8 +872,20 @@ header {
         flex-direction: column;
         gap: 12px;
     }
+    .nav-toggle {
+        display: block;
+        font-size: 28px;
+        cursor: pointer;
+        align-self: flex-end; 
+    }
+    .main-nav {
+        display: none;
+        width: 100%;
+    }
 
     .main-nav ul {
+        display: flex;
+        flex-direction: column;
         flex-wrap: wrap;
         justify-content: center;
     }
@@ -877,6 +897,9 @@ header {
     .main-nav li:nth-child(4) a {
         width: 50px;
         height: 50px;
+    }
+    .menu-checkbox:checked ~ .main-nav {
+        display: block;
     }
 
     .daily-affirmation-title {
