@@ -916,7 +916,8 @@ header {
         width: 100%;
         height: auto;
         display: flex;
-        flex-direction: column;
+        flex-direction:row;
+        flex-wrap: wrap;
         align-items: center;
         gap: 10px;
     }
